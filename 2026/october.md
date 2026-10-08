@@ -124,3 +124,50 @@ Investigate:
 - 1-minute, 5-minute, 15-minute, 30-minute, 60-minute, 120-minute, and 24-hour lag relationships
 - correlation between current power and power 60 minutes into the future
 - whether daily persistence is strong enough to justify 24-hour lag features
+
+
+## October 8, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — lag analysis and temporal persistence for the 60-minute-ahead forecasting target.
+
+### What I Investigated
+
+- Sorted the household power dataset chronologically before creating lag features.
+- Created temporary lag features for `Global_active_power` at:
+  - 1 minute
+  - 5 minutes
+  - 15 minutes
+  - 30 minutes
+  - 60 minutes
+  - 120 minutes
+  - 1440 minutes (24 hours)
+- Created a 60-minute-ahead forecasting target using future `Global_active_power`.
+- Measured the correlation between historical power values and the 60-minute-ahead target.
+- Compared current power consumption with future power consumption to evaluate short-term persistence.
+
+### What I Learned
+
+- Lag features let the model use past observations as predictors for future behavior.
+- The meaning of a lag must always be interpreted relative to the target horizon.
+- For a row representing the present time:
+  - current `Global_active_power` is 60 minutes behind the target
+  - `power_lag_60` is 120 minutes behind the target
+  - `power_lag_1440` represents approximately the same time on the previous day
+- Correlation with the future target provides evidence for which historical offsets may be useful during feature engineering.
+- Time-series feature engineering requires preserving chronological order so each lag retains its correct temporal meaning.
+
+### Current Direction
+
+Use EDA evidence rather than arbitrary choices to select lag features for the forecasting model.
+
+The next analysis will visually examine current power versus 60-minute-ahead power and evaluate daily persistence using the 24-hour lag.
+
+### Next Step
+
+Continue EDA by:
+
+- plotting current `Global_active_power` against `power_target_60`
+- examining the relationship between the 24-hour lag and the future target
+- deciding which lag intervals should be carried into `03_feature_engineering.ipynb`
