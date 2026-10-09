@@ -171,3 +171,50 @@ Continue EDA by:
 - plotting current `Global_active_power` against `power_target_60`
 - examining the relationship between the 24-hour lag and the future target
 - deciding which lag intervals should be carried into `03_feature_engineering.ipynb`
+
+
+## October 9, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — short-term and daily persistence analysis for the household power forecasting problem.
+
+### What I Investigated
+
+- Plotted current `Global_active_power` against power consumption 60 minutes into the future.
+- Examined whether current household power consumption contains useful predictive information for the one-hour-ahead target.
+- Plotted historical power consumption against the 60-minute-ahead target to investigate daily persistence.
+- Identified an important timing distinction between:
+  - `power_lag_1440`: power 24 hours before the current prediction time
+  - `power_target_60`: power 60 minutes after the current prediction time
+- Added `power_lag_1380` so the model can compare the forecast target with approximately the same clock time on the previous day.
+- Added a direct correlation comparison between `power_lag_1380`, `power_lag_1440`, and `power_target_60`.
+
+### What I Learned
+
+- Current household power contains useful information about consumption one hour later, but the relationship is highly variable rather than tightly deterministic.
+- A wide scatter around the current-versus-future relationship suggests that current consumption alone will not be enough for accurate forecasting.
+- This supports using additional lag features, calendar variables, and electrical measurements.
+- Daily persistence exists as a possible source of information, but the visual relationship appears substantially weaker than short-term persistence.
+- Lag definitions must always be interpreted relative to the forecast horizon.
+- For a 60-minute-ahead forecast, a 1380-minute lag represents approximately the same target clock time on the previous day, while a 1440-minute lag represents power 24 hours before the current prediction time.
+- Careful temporal reasoning is necessary to prevent subtly misaligned features in forecasting projects.
+
+### Current Direction
+
+Retain both short-term historical features and a daily-lag candidate for feature engineering, but allow validation performance to determine whether the daily feature actually improves forecasting.
+
+The EDA results continue to support comparing linear and nonlinear models because the future-power relationship contains substantial spread and structure that may not be captured by a simple linear relationship.
+
+### Next Step
+
+Use the completed EDA to decide the initial feature set for `03_feature_engineering.ipynb`, including:
+
+- short-term power lags
+- same-time-yesterday lag
+- rolling consumption statistics
+- calendar features
+- selected electrical measurements
+
+Then construct the 60-minute-ahead target and prepare a leakage-safe chronological train/validation/test dataset.
+
