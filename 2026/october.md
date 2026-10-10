@@ -218,3 +218,27 @@ Use the completed EDA to decide the initial feature set for `03_feature_engineer
 
 Then construct the 60-minute-ahead target and prepare a leakage-safe chronological train/validation/test dataset.
 
+
+## October 10, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — began the feature engineering stage.
+
+### Progress
+
+- Created `03_feature_engineering.ipynb`.
+- Loaded the validated household power Parquet dataset.
+- Re-sorted the data chronologically and verified the time range.
+- Prepared to convert EDA findings into a leakage-safe forecasting feature set.
+
+### Next Step
+
+Create:
+
+- calendar features
+- lag features
+- rolling statistics
+- the 60-minute-ahead target
+
+Then remove unusable rows and save the engineered modeling dataset.
