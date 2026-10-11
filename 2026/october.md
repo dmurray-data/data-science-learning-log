@@ -242,3 +242,46 @@ Create:
 - the 60-minute-ahead target
 
 Then remove unusable rows and save the engineered modeling dataset.
+
+
+## October 11, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — completed the first full feature-engineering pass for the household power forecasting dataset.
+
+### What I Built
+
+- Created calendar features:
+  - hour
+  - day of week
+  - month
+  - weekend indicator
+- Created power lag features at multiple historical offsets.
+- Added the corrected same-target-time-yesterday lag using 1380 minutes.
+- Created trailing rolling statistics for recent and daily power behavior.
+- Created the 60-minute-ahead forecasting target.
+- Defined the final modeling feature list explicitly.
+- Removed rows that could not support valid lag, rolling, or future-target values.
+- Saved the engineered modeling dataset as:
+
+`household_power_features.parquet`
+
+### Final Dataset
+
+- Original rows: 2,075,259
+- Usable modeling rows: 1,950,244
+- Rows removed: 125,015
+- Final shape: 1,950,244 × 24
+
+### What I Learned
+
+- Feature engineering for forecasting requires strict temporal alignment.
+- Lag and rolling features must use only information available at or before prediction time.
+- Future targets naturally invalidate the final rows of the dataset.
+- Long missing-data blocks also remove surrounding rows when historical windows or future targets depend on unavailable measurements.
+- Explicitly defining the feature list makes the modeling pipeline easier to audit and reproduce.
+
+### Next Step
+
+Create a leakage-safe chronological train/validation/test split and fit preprocessing only on the training data before building baseline models.
