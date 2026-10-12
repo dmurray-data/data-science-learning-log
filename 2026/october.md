@@ -285,3 +285,38 @@ Deep-Learning Tabular Prediction System — completed the first full feature-eng
 ### Next Step
 
 Create a leakage-safe chronological train/validation/test split and fit preprocessing only on the training data before building baseline models.
+
+
+## October 12, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — chronological train/validation/test splitting and preprocessing.
+
+### Progress
+
+- Loaded the engineered household power feature dataset.
+- Created a leakage-safe chronological split:
+  - 70% training
+  - 15% validation
+  - 15% test
+- Verified that the train, validation, and test periods are strictly ordered in time.
+- Separated predictors from the 60-minute-ahead target.
+- Fit a `StandardScaler` using only the training features.
+- Applied the fitted scaler unchanged to training, validation, and test data.
+- Verified that the scaled training features are centered near zero with standard deviation near one.
+
+### What I Learned
+
+- Forecasting datasets should be split chronologically rather than randomly.
+- Preprocessing can leak future information if scaling parameters are estimated from validation or test data.
+- The correct workflow is:
+
+  `fit on training → transform training/validation/test`
+
+- Validation and test data should not necessarily have mean 0 after scaling, because they are transformed using training-set statistics.
+- Scaled and unscaled feature versions should both be preserved because neural networks and linear models benefit from scaling, while tree-based models generally do not require it.
+
+### Next Step
+
+Complete the remaining split diagnostics and metadata checks, then begin the baseline-model notebook with a naive persistence baseline followed by linear regression, random forest, and gradient boosting.
