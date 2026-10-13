@@ -320,3 +320,38 @@ Deep-Learning Tabular Prediction System — chronological train/validation/test 
 ### Next Step
 
 Complete the remaining split diagnostics and metadata checks, then begin the baseline-model notebook with a naive persistence baseline followed by linear regression, random forest, and gradient boosting.
+
+
+## October 13, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — completed the chronological data-splitting and preprocessing stage and began the baseline-modeling stage.
+
+### Progress
+
+- Preserved both scaled and unscaled feature sets for different model families.
+- Saved train, validation, and test date ranges and row counts as split metadata.
+- Checked target means across train, validation, and test periods to look for temporal distribution shift.
+- Completed `04_train_validation_test_split.ipynb`.
+- Created `05_baseline_models.ipynb` and documented the modeling goals.
+
+### What I Learned
+
+- Different model families have different preprocessing requirements:
+  - linear models and neural networks generally benefit from standardized features
+  - tree-based models generally do not require feature scaling
+- Chronological split metadata makes the forecasting experiment easier to audit and reproduce.
+- Differences between target distributions across time periods can help explain later differences in validation and test performance.
+- Baseline models are necessary for determining whether added model complexity actually improves forecasting performance.
+
+### Next Step
+
+Begin model evaluation with:
+
+1. naive persistence baseline
+2. linear regression
+3. random forest
+4. gradient boosting
+
+Use consistent regression metrics so the models can be compared fairly before training the PyTorch neural network.
