@@ -355,3 +355,32 @@ Begin model evaluation with:
 4. gradient boosting
 
 Use consistent regression metrics so the models can be compared fairly before training the PyTorch neural network.
+
+
+## October, 14, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — began the baseline-model evaluation stage.
+
+### Progress
+
+- Loaded the engineered household power dataset into `05_baseline_models.ipynb`.
+- Recreated the exact chronological 70/15/15 train, validation, and test split.
+- Reused the finalized feature set and 60-minute-ahead target.
+- Created a reusable regression-evaluation function using:
+  - MAE
+  - RMSE
+  - R²
+- Set up a shared results structure so all baseline models can be compared consistently.
+
+### What I Learned
+
+- Model comparisons are only meaningful when every model is evaluated using the same split and metrics.
+- RMSE is useful as the primary metric because it penalizes large forecasting errors more heavily than MAE.
+- MAE and R² provide complementary views of model performance.
+- The held-out test set should remain untouched while model selection is performed on the validation set.
+
+### Next Step
+
+Evaluate the naive persistence baseline and linear regression model before moving to random forest and gradient boosting.
