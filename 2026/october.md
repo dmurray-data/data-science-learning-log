@@ -357,7 +357,7 @@ Begin model evaluation with:
 Use consistent regression metrics so the models can be compared fairly before training the PyTorch neural network.
 
 
-## October, 14, 2026
+## October 14, 2026
 
 ### Worked On
 
@@ -384,3 +384,38 @@ Deep-Learning Tabular Prediction System — began the baseline-model evaluation 
 ### Next Step
 
 Evaluate the naive persistence baseline and linear regression model before moving to random forest and gradient boosting.
+
+
+## 2026-10-15
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — established the first forecasting baselines.
+
+### Progress
+
+- Evaluated a naive persistence baseline using current `Global_active_power` as the prediction for power 60 minutes later.
+- Fit and evaluated a linear regression model using the engineered feature set.
+- Standardized the linear-model inputs using a `StandardScaler` fit only on the training data.
+- Evaluated both models on the same chronological validation set using:
+  - MAE
+  - RMSE
+  - R²
+- Added both results to a shared comparison table.
+
+### What I Learned
+
+- A persistence baseline provides an essential reference point for time-series forecasting.
+- A more complex model should only be considered useful if it can beat the naive baseline on the same validation data.
+- Linear regression provides a strong interpretable baseline for determining how much value the engineered features add before using nonlinear models.
+- Scaling must continue to be fit on training data only to avoid leakage.
+- Consistent metrics and validation data make model comparisons meaningful.
+
+### Next Step
+
+Train and evaluate:
+
+- random forest
+- histogram gradient boosting
+
+Then compare all baseline models by RMSE, MAE, R², and improvement over persistence.
