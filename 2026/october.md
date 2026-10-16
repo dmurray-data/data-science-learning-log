@@ -419,3 +419,29 @@ Train and evaluate:
 - histogram gradient boosting
 
 Then compare all baseline models by RMSE, MAE, R², and improvement over persistence.
+
+
+## October 16, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — added the random forest baseline.
+
+### Progress
+
+- Trained a `RandomForestRegressor` for 60-minute-ahead household power forecasting.
+- Used a reproducible 300,000-row sample from the chronological training set to keep training time and memory use reasonable.
+- Evaluated the trained random forest on the full validation set.
+- Added the random forest MAE, RMSE, and R² results to the shared model-comparison table.
+- Preserved the held-out test set for final evaluation only.
+
+### What I Learned
+
+- Large tabular datasets can make full random-forest training unnecessarily expensive, so controlled training samples can be useful for establishing baselines.
+- Training on a sample does not prevent evaluation on the full validation set.
+- Tree-based models can capture nonlinear relationships and feature interactions that linear regression cannot.
+- Fair model comparison still depends on using the same validation period and evaluation metrics across all models.
+
+### Next Step
+
+Train and evaluate histogram gradient boosting, then compare all classical baselines against the persistence forecast before moving to the PyTorch neural network.
