@@ -445,3 +445,33 @@ Deep-Learning Tabular Prediction System — added the random forest baseline.
 ### Next Step
 
 Train and evaluate histogram gradient boosting, then compare all classical baselines against the persistence forecast before moving to the PyTorch neural network.
+
+
+## October 17, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — completed the histogram gradient boosting baseline.
+
+### Progress
+
+- Trained a `HistGradientBoostingRegressor` on the full chronological training set.
+- Used histogram-based gradient boosting because it is better suited to the large tabular dataset than traditional gradient boosting.
+- Generated predictions for the full validation period.
+- Evaluated the model using:
+  - MAE
+  - RMSE
+  - R²
+- Added gradient boosting to the shared baseline-results collection.
+- Continued keeping the final test set untouched during model selection.
+
+### What I Learned
+
+- Gradient boosting builds an ensemble sequentially, with later trees correcting errors made by earlier trees.
+- Histogram-based boosting can make gradient boosting practical on datasets with more than one million training observations.
+- Nonlinear models can capture interactions among lag, rolling, calendar, and electrical features that linear regression cannot represent directly.
+- Validation performance, rather than model complexity, should determine whether a more sophisticated model is worthwhile.
+
+### Next Step
+
+Compare persistence, linear regression, random forest, and histogram gradient boosting in one results table, calculate improvement over the persistence baseline, and save the validation results before beginning the PyTorch neural-network model.
