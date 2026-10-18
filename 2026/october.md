@@ -475,3 +475,30 @@ Deep-Learning Tabular Prediction System — completed the histogram gradient boo
 ### Next Step
 
 Compare persistence, linear regression, random forest, and histogram gradient boosting in one results table, calculate improvement over the persistence baseline, and save the validation results before beginning the PyTorch neural-network model.
+
+
+## October 18, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — completed the classical baseline comparison stage.
+
+### Progress
+
+- Combined the persistence, linear regression, random forest, and histogram gradient boosting results into one comparison table.
+- Ranked models using validation RMSE as the primary metric.
+- Calculated each model's percentage improvement over the naive persistence baseline.
+- Saved the validation comparison results to:
+  `results/metrics/baseline_validation_results.csv`
+- Kept the held-out test set untouched for final model evaluation.
+
+### What I Learned
+
+- A shared results table makes model comparison much clearer than inspecting individual outputs separately.
+- Improvement over a naive persistence forecast is an interpretable way to measure whether a model adds real forecasting value.
+- More complex models should justify their complexity through measurable validation improvement.
+- Model selection should continue to use validation performance rather than the final test set.
+
+### Next Step
+
+Begin the PyTorch neural-network model and compare its validation performance directly against the strongest classical baseline.
