@@ -502,3 +502,30 @@ Deep-Learning Tabular Prediction System — completed the classical baseline com
 ### Next Step
 
 Begin the PyTorch neural-network model and compare its validation performance directly against the strongest classical baseline.
+
+
+## October 19, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — began the PyTorch neural-network modeling stage.
+
+### Progress
+
+- Created `06_pytorch_neural_network.ipynb`.
+- Added the project goals and modeling plan for the neural-network phase.
+- Defined the current benchmark to beat:
+  - Histogram Gradient Boosting RMSE: 0.7885
+  - MAE: 0.5264
+  - R²: 0.434
+  - 26.4% RMSE improvement over persistence
+- Planned to use the same chronological train/validation/test split and evaluation metrics as the classical baselines.
+- Established that the final test set will remain untouched until model selection is complete.
+
+### Current Goal
+
+Build a GPU-trained PyTorch MLP using the engineered household power features and determine whether deep learning provides enough validation improvement to justify its added complexity.
+
+### Next Step
+
+Load the engineered dataset, recreate the chronological split, scale features using training data only, and build PyTorch datasets and dataloaders.
