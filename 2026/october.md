@@ -529,3 +529,29 @@ Build a GPU-trained PyTorch MLP using the engineered household power features an
 ### Next Step
 
 Load the engineered dataset, recreate the chronological split, scale features using training data only, and build PyTorch datasets and dataloaders.
+
+
+## October 20, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — began preparing the real household power dataset for PyTorch neural-network training.
+
+### Progress
+
+- Loaded the engineered household power feature dataset into `06_pytorch_neural_network.ipynb`.
+- Recreated the same chronological 70/15/15 train, validation, and test split used for the classical baseline models.
+- Reused the finalized 22-feature predictor set and 60-minute-ahead target.
+- Fit a `StandardScaler` using only the training features.
+- Applied the training-fitted scaler unchanged to validation and test features.
+- Verified that the scaled training features have means near zero and standard deviations near one.
+
+### What I Learned
+
+- The neural network must use exactly the same chronological evaluation periods as the classical models for a fair comparison.
+- Feature scaling is especially important for neural-network optimization because the input variables originally operate on very different numerical scales.
+- Scaling parameters must be learned from training data only to prevent future information from leaking into model development.
+
+### Next Step
+
+Convert the scaled datasets to `float32` PyTorch tensors, create `TensorDataset` and `DataLoader` objects, and inspect the resulting mini-batch shapes before defining the MLP architecture.
