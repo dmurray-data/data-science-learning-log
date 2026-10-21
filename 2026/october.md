@@ -555,3 +555,39 @@ Deep-Learning Tabular Prediction System — began preparing the real household p
 ### Next Step
 
 Convert the scaled datasets to `float32` PyTorch tensors, create `TensorDataset` and `DataLoader` objects, and inspect the resulting mini-batch shapes before defining the MLP architecture.
+
+
+## October 21, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — completed the PyTorch data pipeline setup for neural-network training.
+
+### Progress
+
+- Converted scaled train, validation, and test features to `torch.float32` tensors.
+- Converted the regression targets to `torch.float32` tensors with shape `[N, 1]`.
+- Created `TensorDataset` objects for train, validation, and test data.
+- Created `DataLoader` objects using mini-batches.
+- Used a starting batch size of 2048 for GPU training on the DGX Spark.
+- Enabled shuffled batches for training and deterministic ordering for validation and test sets.
+- Inspected a single training batch to verify tensor shapes, dtypes, and expected structure.
+
+### What I Learned
+
+- PyTorch models expect numerical tensors with consistent dtypes and shapes.
+- For this project, each input batch has the structure:
+
+  `batch_size × 22 features`
+
+- The target batch has shape:
+
+  `batch_size × 1`
+
+- `TensorDataset` pairs feature and target tensors together, while `DataLoader` controls how those examples are fed to the model in mini-batches.
+- Shuffling is appropriate inside the training split because the chronological split has already been established, while validation and test ordering can remain fixed.
+- The tensor and batch concepts from the PyTorch foundations work now directly apply to the real portfolio dataset.
+
+### Next Step
+
+Define the tabular MLP architecture, move it to the GPU, inspect its trainable parameter count, and prepare the training loop.
