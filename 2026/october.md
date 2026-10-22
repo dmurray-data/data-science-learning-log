@@ -591,3 +591,42 @@ Deep-Learning Tabular Prediction System — completed the PyTorch data pipeline 
 ### Next Step
 
 Define the tabular MLP architecture, move it to the GPU, inspect its trainable parameter count, and prepare the training loop.
+
+
+## 2026-10-22
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — defined and configured the first real PyTorch MLP.
+
+### Progress
+
+- Defined a tabular multilayer perceptron with the architecture:
+
+  `22 → 128 → 64 → 32 → 1`
+
+- Added:
+  - ReLU activation functions
+  - Batch normalization
+  - Dropout regularization
+- Moved the model to the GPU when CUDA is available.
+- Inspected the total and trainable parameter count.
+- Reviewed parameter tensor shapes to connect the network architecture back to matrix multiplication concepts.
+- Configured the regression loss using `MSELoss`.
+- Configured the Adam optimizer with:
+  - learning rate `1e-3`
+  - mild weight decay
+- Added a `ReduceLROnPlateau` scheduler to lower the learning rate when validation loss stops improving.
+- Set initial limits for maximum epochs and early stopping patience.
+
+### What I Learned
+
+- The first linear layer maps each 22-feature observation into a 128-dimensional hidden representation.
+- Each `Linear` layer performs a learned matrix transformation followed by nonlinear processing in the hidden layers.
+- Batch normalization can help stabilize training, while dropout and weight decay provide regularization.
+- The final regression layer uses one output neuron with no activation function because the target is a continuous value.
+- Optimizer, scheduler, and early-stopping settings are all part of the training strategy, not just the model architecture itself.
+
+### Next Step
+
+Implement the reusable training loop, perform a forward-pass sanity check, and then begin the first full GPU training run.
