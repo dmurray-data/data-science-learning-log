@@ -675,3 +675,51 @@ Deep-Learning Tabular Prediction System — completed the neural-network trainin
 ### Next Step
 
 Run the first full GPU training experiment, inspect the training and validation loss curves, and evaluate the restored best model against the histogram gradient boosting benchmark of RMSE 0.7885.
+
+
+## October 24, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — completed the first full GPU training run of the PyTorch neural network.
+
+### Progress
+
+- Trained the tabular MLP on the DGX Spark using the full training pipeline.
+- Used mini-batch GPU training with:
+  - MSE loss
+  - Adam optimization
+  - weight decay
+  - learning-rate scheduling
+  - early stopping
+- Recorded training and validation loss across epochs.
+- Plotted the training and validation loss curves.
+- Observed rapid improvement during the first several epochs.
+- Validation loss reached its strongest region early and then began to plateau and fluctuate.
+- Training loss continued decreasing after validation performance stopped improving significantly.
+- The training pipeline restored the model state associated with the best validation performance.
+
+### Training Behavior
+
+The loss curves showed a developing generalization gap:
+
+- Training loss continued to decrease steadily.
+- Validation loss initially decreased substantially.
+- Validation loss later stabilized around approximately 0.64 MSE while training loss continued downward.
+- This suggests the model began to mildly overfit the training data after the early epochs.
+
+This behavior demonstrates why validation monitoring and early stopping are important even when training loss continues to improve.
+
+### What I Learned
+
+- Lower training loss does not automatically mean better performance on unseen data.
+- Validation loss is the more important signal for deciding when model training has stopped producing useful generalization improvements.
+- A growing difference between training and validation loss is evidence that the model is beginning to specialize to the training data.
+- Early stopping allows training to terminate while retaining the model from the strongest validation epoch rather than the final epoch.
+- Plotting learning curves provides information about model behavior that cannot be seen from a final metric alone.
+
+### Next Step
+
+Generate predictions from the restored best model on the validation set and calculate MAE, RMSE, and R².
+
+Then compare the neural network directly against the current best classical model, Histogram Gradient Boosting, which achieved an RMSE of 0.7885.
