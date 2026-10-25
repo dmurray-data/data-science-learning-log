@@ -723,3 +723,46 @@ This behavior demonstrates why validation monitoring and early stopping are impo
 Generate predictions from the restored best model on the validation set and calculate MAE, RMSE, and R².
 
 Then compare the neural network directly against the current best classical model, Histogram Gradient Boosting, which achieved an RMSE of 0.7885.
+
+
+## October 25, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — completed validation evaluation of the first PyTorch neural network.
+
+### Progress
+
+- Generated validation predictions using the restored best MLP checkpoint.
+- Calculated the same regression metrics used for the classical models:
+  - MAE
+  - RMSE
+  - R²
+- Compared the neural network directly against Histogram Gradient Boosting, the strongest classical baseline.
+- Found that the neural network RMSE was approximately 1.24% worse than Histogram Gradient Boosting.
+- Created an actual-vs-predicted scatter plot to inspect prediction behavior across the validation set.
+- Observed that the neural network predicts the common power-consumption range reasonably well but tends to underpredict large consumption spikes.
+- Documented the interpretation of the neural network results.
+
+### Key Result
+
+The first PyTorch MLP performed competitively with Histogram Gradient Boosting, but did not outperform it.
+
+`NN RMSE improvement vs HGB: -1.24%`
+
+This indicates that the additional complexity of the neural network did not provide better validation performance with the current architecture, features, and training configuration.
+
+### What I Learned
+
+- Similar overall RMSE values can hide important differences in prediction behavior.
+- Actual-vs-predicted plots help reveal systematic errors that summary metrics alone cannot show.
+- The neural network tends to regress extreme power values toward the center of the target distribution.
+- Deep learning is not automatically superior to classical machine-learning methods on structured tabular data.
+- Model selection should be based on validation evidence rather than model complexity or technique.
+- A model losing narrowly to a simpler method is still a useful experimental result.
+
+### Next Step
+
+Preserve this model as the baseline neural-network experiment and decide whether to run one controlled improvement experiment before final model selection.
+
+Potential improvements include changes to the loss function, architecture, regularization, or handling of rare high-power observations while continuing to leave the test set untouched.
