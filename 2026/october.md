@@ -766,3 +766,48 @@ This indicates that the additional complexity of the neural network did not prov
 Preserve this model as the baseline neural-network experiment and decide whether to run one controlled improvement experiment before final model selection.
 
 Potential improvements include changes to the loss function, architecture, regularization, or handling of rare high-power observations while continuing to leave the test set untouched.
+
+
+## October 26, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — completed a controlled Huber-loss neural-network experiment.
+
+### Progress
+
+- Created a separate notebook for the Huber-loss experiment.
+- Recreated the data loading, chronological split, scaling, tensor conversion, dataloaders, model architecture, and training function so the notebook is fully self-contained.
+- Kept the MLP architecture and training configuration unchanged from the baseline neural network.
+- Changed only the loss function from `MSELoss` to `HuberLoss`.
+- Trained the Huber model with:
+  - Adam optimizer
+  - weight decay
+  - learning-rate scheduling
+  - early stopping
+- Observed the scheduler reduce the learning rate after validation performance stalled.
+- Early stopping triggered after the model failed to improve further.
+- Evaluated the restored best Huber model on the validation set.
+- Compared its RMSE directly against the baseline MSE-trained neural network.
+
+### Key Result
+
+The Huber-loss experiment did not improve the neural network.
+
+- Baseline NN RMSE: approximately `0.7983`
+- Huber NN improvement vs baseline NN: `-1.51%`
+
+The negative improvement means the Huber model performed worse than the original MSE-trained neural network.
+
+### What I Learned
+
+- Controlled experiments make it possible to attribute performance changes to a specific modeling decision.
+- A lower training loss value cannot be compared directly across different loss functions.
+- Model comparisons should use the same external evaluation metrics such as RMSE, MAE, and R².
+- Huber loss did not improve this forecasting problem, even though it was motivated by the neural network's difficulty with high-power observations.
+- Not every theoretically reasonable model change leads to better validation performance.
+- The original MSE-trained MLP remains the strongest neural-network configuration tested so far.
+
+### Next Step
+
+Run one final controlled neural-network experiment focused on architecture or regularization, then proceed to final model selection and test-set evaluation.
