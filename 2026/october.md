@@ -811,3 +811,41 @@ The negative improvement means the Huber model performed worse than the original
 ### Next Step
 
 Run one final controlled neural-network experiment focused on architecture or regularization, then proceed to final model selection and test-set evaluation.
+
+
+## October 27, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — began the final controlled neural-network experiment.
+
+### Progress
+
+- Created `08_neural_network_reduced_dropout.ipynb`.
+- Defined the experiment goal and hypothesis.
+- Established that the new experiment will keep the existing:
+  - dataset
+  - chronological train/validation/test split
+  - preprocessing
+  - hidden-layer sizes
+  - optimizer
+  - learning rate
+  - weight decay
+  - scheduler
+  - batch size
+  - early stopping procedure
+- Defined the controlled change as reduced dropout:
+  - baseline dropout: `0.20` and `0.10`
+  - experimental dropout: `0.10` and `0.05`
+- Framed the experiment around the possibility that the baseline MLP may be slightly over-regularized.
+
+### What I Learned
+
+- Controlled model experiments are most useful when only one meaningful factor is changed at a time.
+- Reducing dropout tests whether the network can benefit from retaining more hidden-unit activity during training.
+- A small performance difference should be interpreted cautiously because neural-network training includes randomness from initialization and minibatch ordering.
+- The purpose of this experiment is not to force the neural network to win, but to test one final reasonable hypothesis before final model selection.
+
+### Next Step
+
+Recreate the self-contained data and training pipeline, set reproducibility seeds, define the reduced-dropout architecture, and run the final neural-network validation experiment.
