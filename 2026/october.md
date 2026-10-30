@@ -849,3 +849,52 @@ Deep-Learning Tabular Prediction System — began the final controlled neural-ne
 ### Next Step
 
 Recreate the self-contained data and training pipeline, set reproducibility seeds, define the reduced-dropout architecture, and run the final neural-network validation experiment.
+
+
+## October 30, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — completed the final controlled neural-network experiment.
+
+### Progress
+
+- Created and completed the reduced-dropout neural-network experiment.
+- Recreated the self-contained data, preprocessing, tensor, dataloader, model, and training pipeline.
+- Added reproducibility seeds for Python, NumPy, and PyTorch.
+- Kept the baseline architecture and training setup unchanged except for dropout probabilities.
+- Reduced dropout from:
+  - `0.20 → 0.10`
+  - `0.10 → 0.05`
+- Trained the model with the same:
+  - MSE loss
+  - Adam optimizer
+  - weight decay
+  - learning-rate scheduler
+  - early stopping
+- Generated validation predictions and evaluated MAE, RMSE, and R².
+- Compared the reduced-dropout model directly against the baseline neural network and Histogram Gradient Boosting.
+
+### Key Result
+
+Reducing dropout did not improve validation performance.
+
+- Improvement vs baseline NN: `-0.09%`
+- Improvement vs HGB: `-1.32%`
+
+The reduced-dropout model performed essentially the same as the baseline neural network, but slightly worse.
+
+### What I Learned
+
+- Small architecture changes do not necessarily produce meaningful performance improvements.
+- A difference of only a fraction of a percent should be interpreted cautiously.
+- The baseline MSE-trained MLP remains the strongest neural-network configuration tested.
+- Histogram Gradient Boosting remains the strongest overall validation model.
+- Controlled experiments are more valuable than endless hyperparameter tuning because they provide clear evidence about whether a specific change helps.
+- At this point, further neural-network tuning is unlikely to be justified without a new modeling hypothesis.
+
+### Next Step
+
+Stop neural-network tuning and move to final model selection.
+
+Evaluate the selected models on the previously untouched test set, compare final generalization performance, and determine the preferred model for the project.
