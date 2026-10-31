@@ -898,3 +898,54 @@ The reduced-dropout model performed essentially the same as the baseline neural 
 Stop neural-network tuning and move to final model selection.
 
 Evaluate the selected models on the previously untouched test set, compare final generalization performance, and determine the preferred model for the project.
+
+
+## October 31, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — began Phase 2 temporal feature expansion.
+
+### Progress
+
+- Created `09_temporal_feature_expansion.ipynb`.
+- Defined the Phase 2 goal of improving 60-minute-ahead forecasting through better temporal features rather than additional neural-network tuning.
+- Loaded the validated minute-level household power dataset.
+- Sorted the data chronologically to preserve correct time alignment.
+- Recreated the original Phase 1 calendar features:
+  - hour
+  - day of week
+  - month
+  - weekend indicator
+- Recreated the original lag features:
+  - 1 minute
+  - 5 minutes
+  - 15 minutes
+  - 30 minutes
+  - 60 minutes
+  - 120 minutes
+  - 1380 minutes
+- Recreated the original rolling features:
+  - 15-minute rolling mean
+  - 60-minute rolling mean
+  - 60-minute rolling standard deviation
+  - 1440-minute rolling mean
+- Recreated the 60-minute-ahead prediction target.
+
+### What I Learned
+
+- Phase 2 should improve the information available to the models before increasing model complexity.
+- Rebuilding features from the validated minute-level timeline ensures that all lag and rolling calculations remain correctly aligned.
+- The existing feature set mainly describes recent power levels and averages, but does not explicitly describe direction, volatility, or recent extremes.
+- Preserving the same forecasting target and chronological structure makes Phase 2 directly comparable with the Phase 1 benchmarks.
+
+### Next Step
+
+Add new temporal features that describe:
+
+- recent changes in power
+- short-term volatility
+- recent maximum and minimum power
+- recent power range
+
+Then inspect their distributions and relationships with the 60-minute-ahead target before rebuilding the Phase 2 modeling dataset.
