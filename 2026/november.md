@@ -33,3 +33,34 @@ Deep-Learning Tabular Prediction System — continued Phase 2 temporal feature e
 Inspect the distributions of the new temporal features and measure their relationships with the 60-minute-ahead target.
 
 Then assemble the complete Phase 2 feature set, remove rows made unusable by lag/rolling calculations, and create the expanded modeling dataset.
+
+
+## November 2, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — analyzed the new Phase 2 temporal features.
+
+### Progress
+
+- Inspected descriptive statistics for the newly engineered temporal features.
+- Reviewed the distributions and numerical ranges of:
+  - recent power-change features
+  - short-term volatility
+  - recent rolling maximums
+  - recent rolling minimums
+  - 60-minute rolling range
+- Calculated correlations between the new temporal features and the 60-minute-ahead power target.
+- Used the correlation analysis as an initial diagnostic for whether the new features contain useful forecasting signal.
+- Kept features with potentially useful nonlinear information even when their simple linear correlation with the target was modest.
+
+### What I Learned
+
+- Correlation is useful for understanding direct linear relationships, but it does not determine whether a feature will help nonlinear models.
+- Features such as rolling range, recent maximums, and power changes may contribute through interactions with other predictors rather than through strong standalone correlation.
+- Inspecting feature distributions helps identify unusual scales, extreme values, and behavior that may affect model training.
+- Phase 2 is focused on improving the information available to the models rather than increasing model complexity.
+
+### Next Step
+
+Assemble the complete expanded Phase 2 feature list, create the final modeling dataframe, remove rows made unusable by lag and rolling calculations, verify chronological integrity and missing values, and save the expanded feature dataset for modeling.
