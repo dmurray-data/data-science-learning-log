@@ -64,3 +64,44 @@ Deep-Learning Tabular Prediction System — analyzed the new Phase 2 temporal fe
 ### Next Step
 
 Assemble the complete expanded Phase 2 feature list, create the final modeling dataframe, remove rows made unusable by lag and rolling calculations, verify chronological integrity and missing values, and save the expanded feature dataset for modeling.
+
+
+## November 3, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — assembled and validated the expanded Phase 2 modeling dataset.
+
+### Progress
+
+- Defined the complete Phase 2 feature list.
+- Combined:
+  - original electrical measurements
+  - original lag features
+  - calendar features
+  - original rolling features
+  - new power-change features
+  - new volatility and recent-extreme features
+- Expanded the modeling feature set from 22 features to 31 features.
+- Built the Phase 2 modeling dataframe using:
+  - datetime
+  - 31 predictor features
+  - the 60-minute-ahead target
+- Removed rows that could not be used because of lag, rolling-window, or target-related missing values.
+- Checked the resulting dataset for:
+  - missing values
+  - chronological ordering
+  - duplicate timestamps
+- Confirmed the expected feature count and dataframe column structure.
+
+### What I Learned
+
+- A clean modeling dataset should be validated before any new model is trained.
+- Feature engineering can increase model complexity even when the underlying model architecture stays unchanged.
+- Chronological integrity remains especially important in forecasting problems because incorrect ordering can introduce leakage.
+- Verifying feature counts and dataset structure helps catch mistakes before they propagate into modeling experiments.
+- Phase 2 now provides both HGB and the neural network with the same expanded 31-feature input space for a fair comparison.
+
+### Next Step
+
+Inspect a few rows for sanity, verify that the new range features behave as expected, save the Phase 2 feature dataset to Parquet, and then begin retraining Histogram Gradient Boosting using the expanded feature set.
