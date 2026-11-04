@@ -105,3 +105,36 @@ Deep-Learning Tabular Prediction System — assembled and validated the expanded
 ### Next Step
 
 Inspect a few rows for sanity, verify that the new range features behave as expected, save the Phase 2 feature dataset to Parquet, and then begin retraining Histogram Gradient Boosting using the expanded feature set.
+
+## October 4, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — completed the Phase 2 temporal feature dataset.
+
+### Progress
+
+- Inspected selected Phase 2 rows to confirm the new engineered features behaved as expected.
+- Verified that recent change, volatility, maximum, minimum, and range features were numerically sensible.
+- Confirmed that `rolling_range_60` remained nonnegative as expected.
+- Completed the final Phase 2 dataset validation.
+- Saved the expanded modeling dataset to:
+
+  `data/processed/household_power_features_phase2.parquet`
+
+- Reloaded the saved Parquet file to verify that it was written correctly.
+- Confirmed that the saved dataset retained the expected shape and structure.
+- Finalized the expanded 31-feature dataset for Phase 2 model experiments.
+
+### What I Learned
+
+- Feature engineering should include both statistical validation and simple sanity checks based on what each feature is supposed to represent.
+- Saving a clean intermediate modeling dataset makes later experiments more reproducible and prevents feature-generation logic from being duplicated across modeling notebooks.
+- Reloading a saved artifact is a useful final verification step before treating it as the source of truth for future modeling.
+- Phase 2 is now ready to test whether better temporal information improves model performance without changing the forecasting target.
+
+### Next Step
+
+Create the Phase 2 model-comparison notebook and retrain Histogram Gradient Boosting first using the expanded 31-feature dataset.
+
+Compare its validation RMSE against the Phase 1 HGB benchmark of `0.7885` before retraining the neural network.
