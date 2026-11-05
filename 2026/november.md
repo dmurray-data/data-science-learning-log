@@ -138,3 +138,37 @@ Deep-Learning Tabular Prediction System — completed the Phase 2 temporal featu
 Create the Phase 2 model-comparison notebook and retrain Histogram Gradient Boosting first using the expanded 31-feature dataset.
 
 Compare its validation RMSE against the Phase 1 HGB benchmark of `0.7885` before retraining the neural network.
+
+
+## November 5, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — started the Phase 2 model-comparison stage.
+
+### Progress
+
+- Created `10_phase2_model_comparison.ipynb`.
+- Added the goals, benchmarks, experimental question, and evaluation plan for Phase 2.
+- Defined the main comparison as:
+  - Phase 1 HGB using 22 features
+  - Phase 2 HGB using 31 features
+- Established the Phase 1 HGB benchmark to beat:
+  - RMSE: `0.7885`
+  - MAE: `0.5264`
+  - R²: `0.434`
+- Documented that the Phase 2 experiment will initially keep HGB hyperparameters unchanged so the effect of the expanded feature set can be measured cleanly.
+- Reaffirmed that the chronological split and untouched test set will be preserved during model selection.
+
+### What I Learned
+
+- A new feature-engineering phase should be evaluated with the same model settings before changing model hyperparameters.
+- Keeping the modeling procedure fixed makes it easier to attribute performance differences to the new features themselves.
+- Validation metrics should continue to guide model selection while the final test set remains reserved for unbiased evaluation.
+- Phase 2 is now structured as a direct test of whether better temporal information improves forecasting performance.
+
+### Next Step
+
+Load the Phase 2 feature dataset, recreate the chronological 70/15/15 split, and train Histogram Gradient Boosting using the expanded 31-feature set.
+
+Then compare its validation MAE, RMSE, and R² directly against the Phase 1 HGB benchmark.
