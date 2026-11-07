@@ -172,3 +172,45 @@ Deep-Learning Tabular Prediction System — started the Phase 2 model-comparison
 Load the Phase 2 feature dataset, recreate the chronological 70/15/15 split, and train Histogram Gradient Boosting using the expanded 31-feature set.
 
 Then compare its validation MAE, RMSE, and R² directly against the Phase 1 HGB benchmark.
+
+## Nov. 7, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — evaluated Phase 2 Histogram Gradient Boosting using the expanded temporal feature set.
+
+### Progress
+
+- Loaded the Phase 2 modeling dataset with 31 features.
+- Recreated the same chronological 70/15/15 train, validation, and test split used in Phase 1.
+- Kept the test set untouched.
+- Trained Histogram Gradient Boosting using the same hyperparameters as Phase 1.
+- Evaluated the Phase 2 HGB model on the validation set using:
+  - MAE
+  - RMSE
+  - R²
+- Compared the Phase 2 model directly against the Phase 1 HGB benchmark.
+
+### Key Result
+
+The Phase 2 temporal features produced a small validation improvement.
+
+- RMSE improvement vs Phase 1 HGB: `+0.23%`
+- MAE change: `-0.0001`
+- R² change: `+0.0029`
+
+This indicates that the additional power-change, volatility, and recent-extreme features contain useful forecasting information, but the improvement is modest.
+
+### What I Learned
+
+- Feature engineering can improve model performance even when the modeling algorithm and hyperparameters remain unchanged.
+- A small positive gain is still useful evidence when the experiment is controlled.
+- The original Phase 1 feature set already captured most of the predictive signal available to HGB.
+- The expanded temporal features add some new information, but they do not fundamentally change the difficulty of the 60-minute forecasting problem.
+- Keeping the model configuration fixed made it possible to attribute the improvement primarily to the new feature set.
+
+### Next Step
+
+Retrain the baseline PyTorch MLP using the same 31 Phase 2 features and unchanged neural-network architecture and training settings.
+
+Then compare whether the expanded temporal features help the neural network more than they helped Histogram Gradient Boosting.
