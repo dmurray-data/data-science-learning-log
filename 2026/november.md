@@ -214,3 +214,31 @@ This indicates that the additional power-change, volatility, and recent-extreme 
 Retrain the baseline PyTorch MLP using the same 31 Phase 2 features and unchanged neural-network architecture and training settings.
 
 Then compare whether the expanded temporal features help the neural network more than they helped Histogram Gradient Boosting.
+
+## Nov. 8, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — prepared the Phase 2 neural-network data pipeline.
+
+### Progress
+
+- Continued work in `10_phase2_model_comparison.ipynb`.
+- Scaled the 31-feature Phase 2 input set using a `StandardScaler` fit only on the training data.
+- Converted training and validation features and targets to `torch.float32` tensors.
+- Created PyTorch `TensorDataset` objects for the Phase 2 training and validation sets.
+- Created `DataLoader` objects using the same batch size and shuffle behavior as the Phase 1 neural-network experiment.
+- Inspected a single training batch to verify that the expanded feature pipeline is working correctly.
+- Confirmed that the neural-network input now uses 31 features rather than the original 22.
+
+### What I Learned
+
+- Expanding the feature set changes the neural network's input dimensionality but does not require changing the overall training pipeline.
+- Keeping the preprocessing, batch size, and data-loading procedure unchanged makes the Phase 2 experiment more controlled.
+- Scaling must still be fit on training data only to prevent information leakage.
+- Inspecting one batch before training is a simple way to verify tensor shape and target alignment.
+- The Phase 2 neural network will now test whether richer temporal information provides more value to the MLP than it provided to Histogram Gradient Boosting.
+
+### Next Step
+
+Define the same baseline MLP architecture using 31 input features, set reproducibility seeds, configure the same MSE/Adam/scheduler training setup, and train the Phase 2 neural network.
