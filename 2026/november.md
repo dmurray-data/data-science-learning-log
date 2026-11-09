@@ -242,3 +242,43 @@ Deep-Learning Tabular Prediction System — prepared the Phase 2 neural-network 
 ### Next Step
 
 Define the same baseline MLP architecture using 31 input features, set reproducibility seeds, configure the same MSE/Adam/scheduler training setup, and train the Phase 2 neural network.
+
+## 2026-11-09
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — completed the Phase 2 neural-network setup and prepared the model for training.
+
+### Progress
+
+- Defined the Phase 2 tabular MLP using the expanded 31-feature input set.
+- Kept the hidden-layer structure consistent with the Phase 1 baseline network.
+- Added the same:
+  - batch normalization
+  - ReLU activations
+  - dropout configuration
+- Set reproducibility seeds for Python, NumPy, and PyTorch.
+- Configured the training device to use CUDA when available.
+- Instantiated the Phase 2 neural network with the correct 31-feature input dimension.
+- Configured the same training setup used in Phase 1:
+  - MSE loss
+  - Adam optimizer
+  - learning rate `1e-3`
+  - weight decay `1e-5`
+  - `ReduceLROnPlateau` scheduler
+  - maximum epoch limit
+  - early-stopping patience
+- Reused the existing training-function design so the Phase 2 neural-network experiment remains directly comparable with Phase 1.
+
+### What I Learned
+
+- Expanding the feature set changes the size of the first neural-network weight matrix while the rest of the architecture can remain unchanged.
+- Keeping architecture and training settings fixed makes it easier to attribute any performance difference to the new temporal features.
+- Reproducibility seeds are important when comparing neural-network experiments because initialization and minibatch ordering can otherwise introduce additional variation.
+- The Phase 2 experiment is now set up as a controlled test of feature quality rather than a simultaneous architecture and hyperparameter experiment.
+
+### Next Step
+
+Run the full Phase 2 neural-network training process using early stopping and learning-rate scheduling.
+
+Then evaluate validation MAE, RMSE, and R² and compare the Phase 2 MLP against both the Phase 1 neural network and the Phase 2 Histogram Gradient Boosting model.
