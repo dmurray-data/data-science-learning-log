@@ -282,3 +282,53 @@ Deep-Learning Tabular Prediction System — completed the Phase 2 neural-network
 Run the full Phase 2 neural-network training process using early stopping and learning-rate scheduling.
 
 Then evaluate validation MAE, RMSE, and R² and compare the Phase 2 MLP against both the Phase 1 neural network and the Phase 2 Histogram Gradient Boosting model.
+
+
+## Nov. 10, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — completed the Phase 2 neural-network comparison.
+
+### Progress
+
+- Trained the Phase 2 baseline MLP using the expanded 31-feature temporal dataset.
+- Kept the same architecture and training setup used in Phase 1 so the comparison remained controlled.
+- Evaluated the Phase 2 neural network on the validation set using:
+  - MAE
+  - RMSE
+  - R²
+- Compared the Phase 2 neural network directly against:
+  - the Phase 1 neural network
+  - the Phase 2 Histogram Gradient Boosting model
+- Confirmed that the Phase 2 neural network improved slightly over the Phase 1 neural network.
+- Confirmed that Histogram Gradient Boosting still remained the strongest validation model.
+
+### Key Results
+
+Phase 2 neural network:
+
+- MAE: `0.5218`
+- RMSE: `0.7973`
+- R²: `0.4215`
+
+Comparison:
+
+- Phase 1 NN RMSE: `0.7983`
+- Phase 2 NN improvement vs Phase 1 NN: `+0.13%`
+- Phase 2 HGB RMSE: `0.7867`
+- Phase 2 NN RMSE: `0.7973`
+
+### What I Learned
+
+- The expanded temporal feature set helped the neural network, but only slightly.
+- Histogram Gradient Boosting benefited more from the Phase 2 features than the neural network did.
+- Better features can improve multiple model families without necessarily changing the model ranking.
+- The neural network remains competitive, but HGB continues to provide stronger validation performance with less modeling complexity.
+- At this point, the evidence supports selecting Phase 2 HGB as the leading model rather than continuing to tune the neural network.
+
+### Next Step
+
+Finalize model selection and evaluate the selected Phase 2 model on the previously untouched test set.
+
+Use the test-set results as the final estimate of generalization performance and complete the project comparison.
