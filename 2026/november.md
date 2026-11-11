@@ -332,3 +332,35 @@ Comparison:
 Finalize model selection and evaluate the selected Phase 2 model on the previously untouched test set.
 
 Use the test-set results as the final estimate of generalization performance and complete the project comparison.
+
+## Nov. 11, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — began the final model-selection and test-evaluation stage.
+
+### Progress
+
+- Created `11_final_model_selection_and_test_evaluation.ipynb`.
+- Defined the final project goal as evaluating the selected model on the previously untouched test set.
+- Selected Phase 2 Histogram Gradient Boosting as the final model based on validation evidence.
+- Documented the Phase 2 HGB validation benchmark:
+  - RMSE: `0.7867`
+- Recorded the Phase 2 neural-network comparison for context:
+  - MAE: `0.5218`
+  - RMSE: `0.7973`
+  - R²: `0.4215`
+- Defined the final evaluation plan and success criteria.
+- Reaffirmed that the final notebook will focus on measurement and conclusion rather than additional tuning.
+
+### What I Learned
+
+- Final model selection should be based on validation evidence, not test-set performance.
+- The test set should remain untouched until all modeling and tuning decisions are complete.
+- A final test evaluation is meant to estimate generalization on genuinely unseen future data.
+- The selected model does not need to exactly reproduce validation performance, but test metrics should remain reasonably close if the model generalizes well.
+- At this stage, the project is transitioning from experimentation to final evidence and conclusions.
+
+### Next Step
+
+Recreate the finalized Phase 2 HGB setup, generate predictions on the untouched test set, calculate MAE, RMSE, and R², and compare test performance against the validation benchmark.
