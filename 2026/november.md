@@ -364,3 +364,36 @@ Deep-Learning Tabular Prediction System — began the final model-selection and 
 ### Next Step
 
 Recreate the finalized Phase 2 HGB setup, generate predictions on the untouched test set, calculate MAE, RMSE, and R², and compare test performance against the validation benchmark.
+
+## Nov. 12, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — began the final test-set evaluation workflow.
+
+### Progress
+
+- Loaded the finalized Phase 2 feature dataset.
+- Recreated the same chronological 70/15/15 train, validation, and test split used during model development.
+- Verified the date ranges for each split.
+- Recreated the finalized 31-feature Phase 2 predictor list.
+- Confirmed the target remains `power_target_60`.
+- Defined the final training and untouched test matrices:
+  - `X_train`
+  - `y_train`
+  - `X_test`
+  - `y_test`
+- Preserved the test set for the first true final evaluation of the selected model.
+
+### What I Learned
+
+- Final evaluation should reuse the exact data split and feature definition that were used during model selection.
+- The test set should only be accessed after all modeling and tuning decisions are complete.
+- Keeping the final evaluation pipeline simple reduces the chance of accidentally introducing a new modeling decision after seeing test performance.
+- The selected model will now be judged on genuinely unseen future data rather than on the validation period used for development.
+
+### Next Step
+
+Train the finalized Phase 2 Histogram Gradient Boosting model using the fixed selected hyperparameters, generate test-set predictions, and calculate final MAE, RMSE, and R².
+
+Then compare test RMSE against the Phase 2 validation benchmark of `0.7867`.
