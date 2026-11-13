@@ -397,3 +397,57 @@ Deep-Learning Tabular Prediction System — began the final test-set evaluation 
 Train the finalized Phase 2 Histogram Gradient Boosting model using the fixed selected hyperparameters, generate test-set predictions, and calculate final MAE, RMSE, and R².
 
 Then compare test RMSE against the Phase 2 validation benchmark of `0.7867`.
+
+## Nov. 13, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — completed the final test-set evaluation of the selected model.
+
+### Progress
+
+- Trained the finalized Phase 2 Histogram Gradient Boosting model using the selected fixed hyperparameters.
+- Generated predictions for the previously untouched test set.
+- Evaluated final test performance.
+- Compared final test RMSE directly against the Phase 2 validation benchmark.
+- Confirmed that the selected model generalized well to unseen future data.
+
+### Key Result
+
+Final selected model:
+
+**Phase 2 Histogram Gradient Boosting**
+
+- Validation RMSE: `0.7867`
+- Test RMSE: `0.6912`
+- Test RMSE change vs validation: `-12.14%`
+
+The test RMSE was substantially lower than the validation RMSE.
+
+### Interpretation
+
+The lower test error suggests that the final test period was easier to forecast than the validation period.
+
+This should not be interpreted as the model itself improving after selection. Instead, the unseen test period likely had a more favorable error profile.
+
+Most importantly, the final model maintained strong performance on completely unseen future data and showed no evidence of severe overfitting.
+
+The test result supports the earlier validation-based decision to select Phase 2 Histogram Gradient Boosting as the preferred model.
+
+### What I Learned
+
+- The test set provides a final estimate of model performance after all tuning and model-selection decisions are complete.
+- Validation and test performance do not need to be identical because different chronological periods can have different distributions and forecasting difficulty.
+- A lower test error does not mean the model became better after selection; it can reflect an easier holdout period.
+- The final test result should be interpreted together with the full validation history rather than in isolation.
+- Preserving the test set until the end made the final evaluation meaningful and unbiased by the model-development process.
+
+### Next Step
+
+Complete the final project wrap-up by:
+
+- recording final test MAE and R²
+- creating final prediction diagnostics
+- assembling the complete model-comparison table
+- documenting conclusions and limitations
+- summarizing the project in a portfolio-ready form
