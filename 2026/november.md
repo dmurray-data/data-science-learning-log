@@ -451,3 +451,45 @@ Complete the final project wrap-up by:
 - assembling the complete model-comparison table
 - documenting conclusions and limitations
 - summarizing the project in a portfolio-ready form
+
+## Nov. 14, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — continued the final project evaluation and diagnostic analysis.
+
+### Progress
+
+- Recorded the complete final test metrics for the selected Phase 2 Histogram Gradient Boosting model.
+- Saved the final test results for use in the project summary.
+- Created final prediction diagnostics for the untouched test set.
+- Generated an actual-vs-predicted comparison for the final model.
+- Calculated test residuals using:
+
+  `residual = actual - predicted`
+
+- Plotted the final test residual distribution.
+- Plotted residuals against predicted power to inspect whether prediction errors were randomly distributed.
+- Observed that residuals are concentrated near zero but have a longer positive tail.
+- Observed visible structure and changing error variance in the residual-vs-predicted plot.
+
+### Diagnostic Interpretation
+
+The residual distribution is centered near zero, indicating that the final HGB model does not have a large overall prediction bias.
+
+However, the positive tail shows that some high-consumption observations are underpredicted.
+
+The residual-vs-predicted plot also contains structured bands and changing error variance rather than completely random scatter. This suggests that household power consumption contains multiple operating regimes and that forecasting difficulty changes depending on the underlying consumption state.
+
+### What I Learned
+
+- Final regression metrics describe overall accuracy, while residual diagnostics reveal where and how a model makes mistakes.
+- Residuals centered near zero are evidence against a large systematic prediction bias.
+- Positive residuals represent underprediction when residuals are defined as `actual - predicted`.
+- Heteroscedastic residuals indicate that prediction uncertainty is not constant across the range of predictions.
+- Structured residual patterns can reveal behavior that is hidden by aggregate metrics such as RMSE.
+- Rare or rapidly changing high-power periods remain one of the most difficult parts of the forecasting problem.
+
+### Next Step
+
+Complete the final model-comparison table and project conclusion, document limitations and future work, then clean the repository and update the README with portfolio-ready project results.
