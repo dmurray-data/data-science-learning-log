@@ -493,3 +493,51 @@ The residual-vs-predicted plot also contains structured bands and changing error
 ### Next Step
 
 Complete the final model-comparison table and project conclusion, document limitations and future work, then clean the repository and update the README with portfolio-ready project results.
+
+## Nov. 15, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — completed the final modeling notebook and project conclusions.
+
+### Progress
+
+- Finished the remaining sections of `11_final_model_selection_and_test_evaluation.ipynb`.
+- Completed the final model-comparison table across the major project experiments.
+- Documented the final selected model:
+  - Phase 2 Histogram Gradient Boosting
+- Summarized the final validation and test performance.
+- Added the final project conclusion.
+- Documented key findings from the full modeling process.
+- Added project limitations.
+- Added possible future-work directions.
+- Completed the modeling and evaluation portion of the project.
+
+### Final Project Findings
+
+- Histogram Gradient Boosting remained the strongest model across the project.
+- Phase 2 temporal feature engineering produced a modest improvement.
+- The PyTorch neural network remained competitive but did not outperform HGB.
+- Huber loss and reduced-dropout experiments did not improve the baseline neural network.
+- The selected Phase 2 HGB model generalized well to the untouched future test period.
+- Residual diagnostics showed that rare or rapidly changing high-consumption periods remain the primary source of forecasting difficulty.
+
+### What I Learned
+
+- Strong data science work is not about forcing the most complex model to win.
+- Validation evidence should determine model selection.
+- Controlled experiments make it easier to understand which changes actually improve performance.
+- Feature engineering can provide measurable gains even when the underlying model remains unchanged.
+- Final test evaluation should occur only after all model-selection decisions are complete.
+- Residual diagnostics are important for understanding model weaknesses beyond aggregate metrics.
+- A complete project should document not only results, but also limitations, failed experiments, and future directions.
+
+### Project Status
+
+The modeling portion of the Deep-Learning Tabular Prediction System is now complete.
+
+The next phase is portfolio preparation rather than additional model tuning.
+
+### Next Step
+
+Clean the repository, organize final outputs, update the README with the project methodology and final results, and prepare the repository for presentation as a portfolio project.
