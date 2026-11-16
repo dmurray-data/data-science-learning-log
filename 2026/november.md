@@ -541,3 +541,52 @@ The next phase is portfolio preparation rather than additional model tuning.
 ### Next Step
 
 Clean the repository, organize final outputs, update the README with the project methodology and final results, and prepare the repository for presentation as a portfolio project.
+
+## Nov. 16, 2026
+
+### Worked On
+
+Deep-Learning Tabular Prediction System — began final portfolio and repository cleanup.
+
+### Progress
+
+- Reviewed the project repository structure for presentation quality.
+- Identified the main numbered project notebooks as the core modeling workflow.
+- Separated the main project sequence from earlier PyTorch learning/foundation notebooks.
+- Began preparing the repository for portfolio presentation rather than additional modeling work.
+- Drafted a README project summary covering:
+  - the forecasting problem
+  - the UCI household power dataset
+  - the chronological and leakage-aware methodology
+  - the model families evaluated
+  - the Phase 1 and Phase 2 comparison
+  - the selected final model
+  - the final test result
+- Documented the final conclusion that Histogram Gradient Boosting outperformed the neural-network alternatives on this structured tabular forecasting task.
+
+### Final Project Result
+
+Selected model:
+
+**Phase 2 Histogram Gradient Boosting**
+
+Key results:
+
+- Validation RMSE: `0.7867`
+- Test RMSE: `0.6912`
+- Phase 2 Neural Network RMSE: `0.7973`
+- Phase 1 Neural Network RMSE: `0.7983`
+
+The final model maintained strong performance on unseen future data and remained the preferred model based on the full experimental evidence.
+
+### What I Learned
+
+- Completing a data science project includes communicating the work clearly, not just producing a strong model.
+- A README should explain the problem, data, methodology, results, and model-selection reasoning without requiring someone to inspect every notebook.
+- Failed and neutral experiments are still valuable when they support a clear evidence-based conclusion.
+- A strong portfolio project should make the experimental progression easy for another person to follow.
+- Model complexity should not be treated as a goal by itself; the final choice should be justified by performance and practical tradeoffs.
+
+### Next Step
+
+Finish repository cleanup, organize notebooks and outputs, add key figures and metrics to the README, and prepare the repository for final portfolio presentation.
