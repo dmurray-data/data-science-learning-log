@@ -590,3 +590,75 @@ The final model maintained strong performance on unseen future data and remained
 ### Next Step
 
 Finish repository cleanup, organize notebooks and outputs, add key figures and metrics to the README, and prepare the repository for final portfolio presentation.
+
+##### November 17, 2026
+
+**Project:** 02 — Deep Learning for Satellite Image Classification  
+**Notebook:** `01_computer_vision_fundamentals.ipynb`  
+**Phase:** 1 — Computer Vision Foundations  
+**Status:** In Progress
+
+## Today's Progress
+
+Today marked the official beginning of Project 02 in my 12-month data science and machine-learning portfolio development plan.
+
+After substantially completing Project 01, which focused on deep learning for tabular prediction, I began transitioning into computer vision and image classification using PyTorch.
+
+### 1. Project Initialization
+
+Established the foundational structure for the new project.
+
+- Created the `computer-vision-satellite-classification` project directory.
+- Organized directories for notebooks, source code, datasets, trained models, evaluation results, and learning logs.
+- Set up the GitHub repository and version-control workflow.
+- Created the initial project documentation, including `README.md`, `.gitignore`, and `requirements.txt`.
+
+### 2. Python Environment Configuration
+
+Configured a dedicated Python virtual environment for Project 02 on the NVIDIA DGX Spark.
+
+- Created and activated the `.venv` environment.
+- Installed the necessary Python packages.
+- Configured Jupyter to recognize the virtual environment.
+- Verified that the environment and required libraries were functioning correctly.
+
+### 3. Notebook 01 Initialization
+
+Created `01_computer_vision_fundamentals.ipynb` in the project's `notebooks/` directory.
+
+Added the introductory Markdown documentation outlining the notebook's purpose, learning objectives, hardware environment, and relationship to the larger satellite image classification project.
+
+The notebook will introduce digital image representation, RGB channels, NumPy arrays, PyTorch image tensors, normalization, batch dimensions, and GPU operations.
+
+## Skills Practiced
+
+- Git and GitHub repository organization
+- Machine-learning project structuring
+- Python virtual environment management
+- Dependency installation and environment configuration
+- Jupyter notebook initialization
+- Technical documentation
+- Reproducible project setup
+
+## Key Takeaways
+
+This session focused primarily on establishing the infrastructure necessary for a well-organized and reproducible machine-learning project.
+
+I now have a working development environment for exploring computer vision using PyTorch on the NVIDIA DGX Spark.
+
+Project 02 will build upon the neural-network fundamentals developed during Project 01 while introducing image processing, convolutional neural networks, transfer learning, and computer vision model evaluation.
+
+## Next Steps
+
+1. Begin the technical exercises in Notebook 01.
+2. Explore grayscale and RGB image representation using NumPy.
+3. Visualize pixel values and individual color channels.
+4. Convert image arrays into PyTorch tensors.
+5. Practice normalization and tensor dimension manipulation.
+6. Investigate image tensor operations using GPU acceleration.
+
+## Session Summary
+
+Successfully initialized Project 02, configured the development environment, and created the first notebook with its introductory documentation.
+
+**Current milestone:** Project infrastructure completed; computer vision fundamentals ready to begin.
