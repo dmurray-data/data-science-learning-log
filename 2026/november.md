@@ -662,3 +662,75 @@ Project 02 will build upon the neural-network fundamentals developed during Proj
 Successfully initialized Project 02, configured the development environment, and created the first notebook with its introductory documentation.
 
 **Current milestone:** Project infrastructure completed; computer vision fundamentals ready to begin.
+
+# November 18, 2026
+
+**Project:** 02 — Deep Learning for Satellite Image Classification  
+**Notebook:** `01_computer_vision_fundamentals.ipynb`  
+**Phase:** 1 — Computer Vision Foundations  
+**Status:** In Progress
+
+## Today's Progress
+
+Continued working on Project 02 of my 12-month data science and machine-learning portfolio development plan, focusing on the fundamentals of digital image representation and manipulation using NumPy and Matplotlib.
+
+Completed Exercises 1 and 2 of Notebook 01, establishing a foundational understanding of how computers represent grayscale and RGB images as numerical arrays.
+
+### 1. Grayscale Image Representation
+
+Explored how grayscale images are represented as two-dimensional arrays containing pixel intensity values.
+
+- Created a 3 × 3 grayscale image using NumPy.
+- Examined pixel values ranging from 0 (black) to 255 (white).
+- Investigated the `uint8` data type and its ability to represent 256 distinct intensity levels.
+- Visualized grayscale pixel intensities using Matplotlib.
+- Reinforced the relationship between array dimensions and image resolution.
+
+### 2. RGB Image Representation
+
+Introduced three-dimensional arrays for representing color images using red, green, and blue channels.
+
+- Created a 100 × 100 RGB image using NumPy.
+- Examined the `(height, width, channels)` array structure.
+- Manipulated individual color channels through NumPy indexing.
+- Experimented with RGB values to produce different colors.
+- Visualized the resulting images using Matplotlib.
+- Developed an understanding of how combinations of RGB intensity values determine pixel colors.
+
+## Skills Practiced
+
+- NumPy array creation and manipulation
+- Multidimensional array indexing
+- Understanding `uint8` image data
+- Grayscale and RGB image representation
+- Matplotlib image visualization
+- RGB channel manipulation
+- Interpreting image dimensions and shapes
+
+## Key Takeaways
+
+Digital images are numerical arrays in which individual pixel values determine the visual appearance of an image.
+
+Grayscale images typically use two-dimensional arrays, while RGB images use three-dimensional arrays containing separate red, green, and blue channels.
+
+The `uint8` data type commonly represents pixel intensities between 0 and 255.
+
+NumPy provides a straightforward way to manipulate individual pixels and color channels, while Matplotlib allows these numerical representations to be visualized.
+
+Understanding these concepts provides the foundation for working with image tensors and convolutional neural networks in PyTorch.
+
+## Next Steps
+
+1. Continue with Exercise 3: Understanding Image Channels.
+2. Create an RGB image containing multiple colored regions.
+3. Extract and visualize individual red, green, and blue channels.
+4. Begin converting NumPy image arrays into PyTorch tensors.
+5. Explore channel-first tensor formatting and pixel normalization.
+
+## Session Summary
+
+Completed the first two exercises of Notebook 01, developing foundational skills in grayscale and RGB image representation, NumPy indexing, and image visualization.
+
+These concepts establish the groundwork for understanding how deep-learning models process visual information.
+
+**Current milestone:** Notebook 01 — Exercises 1–2 completed; Exercise 3 next.
