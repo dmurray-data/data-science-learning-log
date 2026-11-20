@@ -734,3 +734,80 @@ Completed the first two exercises of Notebook 01, developing foundational skills
 These concepts establish the groundwork for understanding how deep-learning models process visual information.
 
 **Current milestone:** Notebook 01 — Exercises 1–2 completed; Exercise 3 next.
+
+### November 20, 2026
+
+**Project:** 02 — Deep Learning for Satellite Image Classification  
+**Notebook:** `01_computer_vision_fundamentals.ipynb`  
+**Phase:** 1 — Computer Vision Foundations  
+**Status:** In Progress
+
+## Today's Progress
+
+Continued working on Project 02 of my 12-month data science and machine-learning portfolio development plan, focusing on understanding how RGB images store and represent color information.
+
+Completed Exercise 3 of Notebook 01, exploring how individual color channels contribute to the appearance of a digital image.
+
+### 1. Creating a Multicolor RGB Image
+
+Used NumPy to create a synthetic RGB image containing four distinct colored regions.
+
+- Initialized a 100 × 100 RGB image using `np.zeros()`.
+- Used NumPy array slicing to divide the image into four quadrants.
+- Assigned RGB intensity values to produce red, green, blue, and yellow regions.
+- Visualized the resulting image using Matplotlib.
+- Reinforced understanding of multidimensional array indexing and pixel manipulation.
+
+### 2. Extracting Individual RGB Channels
+
+Investigated how color information is distributed across the three channels of an RGB image.
+
+- Extracted the red, green, and blue channels using NumPy indexing.
+- Examined the structure of individual two-dimensional channel arrays.
+- Visualized each channel separately using grayscale color maps.
+- Observed how brighter regions correspond to higher channel intensity values.
+- Explored how yellow results from combining high red and green intensities.
+
+### 3. Visualizing Channel Contributions
+
+Used Matplotlib subplots to compare the original RGB image with its individual channels.
+
+This exercise demonstrated how three separate numerical arrays combine to produce a full-color image and how examining individual channels can reveal the underlying pixel information.
+
+## Skills Practiced
+
+- NumPy multidimensional array slicing
+- RGB channel extraction and manipulation
+- Working with three-dimensional image arrays
+- Matplotlib subplot creation
+- Grayscale visualization of individual color channels
+- Understanding additive RGB color representation
+- Interpreting pixel intensity values
+
+## Key Takeaways
+
+RGB images are represented by three channels containing red, green, and blue intensity values.
+
+Each channel can be extracted and analyzed independently as a two-dimensional numerical array.
+
+When displayed in grayscale, brighter areas indicate higher intensity values for the selected channel, while darker areas indicate lower intensity values.
+
+Combining the information from all three channels produces the original full-color image.
+
+These concepts are foundational to computer vision because convolutional neural networks process image data through numerical operations involving channels and spatial relationships.
+
+## Next Steps
+
+1. Begin Exercise 4: Converting NumPy Images to PyTorch Tensors.
+2. Explore the differences between channel-last `(H, W, C)` and channel-first `(C, H, W)` representations.
+3. Practice using `torch.from_numpy()` and `permute()`.
+4. Investigate how image tensors are structured for convolutional neural networks.
+5. Continue developing familiarity with PyTorch image-processing workflows.
+
+## Session Summary
+
+Completed Exercise 3 of Notebook 01, strengthening my understanding of RGB image representation, multidimensional array slicing, and individual color-channel visualization.
+
+This session provided an important foundation for understanding how deep-learning models process visual information.
+
+**Current milestone:** Notebook 01 — Exercises 1–3 completed; Exercise 4 next.
