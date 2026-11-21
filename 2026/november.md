@@ -811,3 +811,102 @@ Completed Exercise 3 of Notebook 01, strengthening my understanding of RGB image
 This session provided an important foundation for understanding how deep-learning models process visual information.
 
 **Current milestone:** Notebook 01 — Exercises 1–3 completed; Exercise 4 next.
+
+### November 21, 2026
+
+**Project:** 02 — Deep Learning for Satellite Image Classification  
+**Notebook:** `01_computer_vision_fundamentals.ipynb`  
+**Phase:** 1 — Computer Vision Foundations  
+**Status:** In Progress
+
+## Today's Progress
+
+Continued working on Project 02 of my 12-month data science and machine-learning portfolio development plan.
+
+Completed Exercises 4 and 5 of Notebook 01, focusing on converting NumPy image arrays into PyTorch tensors and understanding pixel normalization.
+
+These exercises built upon previous work with grayscale images, RGB channels, and multidimensional NumPy arrays, introducing important preprocessing techniques used in computer vision and deep learning.
+
+### 1. Converting NumPy Images to PyTorch Tensors
+
+Explored how image data can be converted from NumPy arrays into PyTorch tensors for use in deep-learning models.
+
+- Used `torch.from_numpy()` to convert an RGB image into a PyTorch tensor.
+- Examined the differences between NumPy's common channel-last `(H, W, C)` format and PyTorch's channel-first `(C, H, W)` format.
+- Used `permute(2, 0, 1)` to rearrange tensor dimensions.
+- Verified tensor shapes before and after permutation.
+- Reinforced understanding of how tensor dimensions influence compatibility with neural-network architectures.
+
+This exercise demonstrated an important distinction between conventional image processing and the input formats expected by PyTorch convolutional neural networks.
+
+### 2. Pixel Normalization
+
+Investigated how raw pixel intensity values are converted into floating-point values suitable for neural-network training.
+
+- Examined the original `torch.uint8` image representation.
+- Converted image tensors to `torch.float32` using `.float()`.
+- Normalized pixel values by dividing by 255.
+- Observed the transformation from the original `[0, 255]` intensity range to `[0, 1]`.
+- Used `.min()`, `.max()`, and `.item()` to inspect tensor values.
+- Reviewed how normalization helps establish consistent input scales for neural-network optimization.
+
+Also introduced the concept of standardization using channel-specific means and standard deviations:
+
+\[
+x_{\text{normalized}} = \frac{x-\mu}{\sigma}
+\]
+
+This technique will become particularly relevant when working with pretrained computer vision models.
+
+## Skills Practiced
+
+- NumPy-to-PyTorch tensor conversion
+- PyTorch tensor dimension manipulation
+- Understanding channel-first and channel-last image formats
+- Using `torch.from_numpy()` and `permute()`
+- Converting tensor data types
+- Pixel intensity normalization
+- Inspecting tensor statistics
+- Preparing image data for deep-learning models
+
+## Key Takeaways
+
+Digital image arrays must be organized into the appropriate tensor format before they can be processed by convolutional neural networks.
+
+NumPy commonly represents RGB images using `(H, W, C)`, while PyTorch convolutional layers expect individual images in `(C, H, W)` format.
+
+The `permute()` operation rearranges tensor dimensions without changing the underlying pixel values.
+
+Raw image data is commonly stored using unsigned 8-bit integers, but neural networks generally operate on floating-point tensors.
+
+Dividing pixel values by 255 converts standard 8-bit RGB intensity values into the `[0, 1]` range, establishing a consistent numerical scale for model inputs.
+
+These preprocessing operations will form an essential part of the image classification pipeline used later in the project.
+
+## Connection to Project 01
+
+These exercises reinforced concepts previously explored during Project 01, particularly PyTorch tensor manipulation, data types, and preprocessing.
+
+The primary difference is the structure of the input data.
+
+In Project 01, neural networks processed tabular data consisting of numerical features. In Project 02, neural networks will process multidimensional image tensors containing both spatial and color-channel information.
+
+This represents an important step toward understanding convolutional neural networks and learning features directly from images.
+
+## Next Steps
+
+1. Begin Exercise 6: Adding the Batch Dimension.
+2. Understand the `(N, C, H, W)` tensor format.
+3. Practice using `unsqueeze()` to add dimensions.
+4. Complete Exercise 7: GPU Tensor Operations.
+5. Transfer image tensors to the NVIDIA DGX Spark GPU.
+6. Practice computing image statistics using PyTorch.
+7. Continue toward completing Notebook 01.
+
+## Session Summary
+
+Completed Exercises 4 and 5 of Notebook 01, developing practical experience converting NumPy image arrays into PyTorch tensors, rearranging image dimensions, and normalizing pixel intensities.
+
+These exercises strengthened the connection between fundamental image processing and the PyTorch workflows previously developed during Project 01.
+
+**Current milestone:** Notebook 01 — Exercises 1–5 completed; Exercise 6 next.
