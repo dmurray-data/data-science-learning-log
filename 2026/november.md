@@ -910,3 +910,53 @@ Completed Exercises 4 and 5 of Notebook 01, developing practical experience conv
 These exercises strengthened the connection between fundamental image processing and the PyTorch workflows previously developed during Project 01.
 
 **Current milestone:** Notebook 01 — Exercises 1–5 completed; Exercise 6 next.
+
+
+### November 22, 2026
+
+**Project:** 02 — Deep Learning for Satellite Image Classification  
+**Notebook:** `01_computer_vision_fundamentals.ipynb`  
+**Phase:** 1 — Computer Vision Foundations  
+**Status:** Notebook 01 Completed
+
+## Today's Progress
+
+Continued working on Project 02 of my 12-month data science and machine-learning portfolio development plan.
+
+Completed the remaining exercises in Notebook 01, focusing on image batching, GPU-accelerated tensor operations, and the representation of satellite-sized images in PyTorch.
+
+This session built upon earlier exercises involving NumPy arrays, RGB image channels, tensor dimension manipulation, and pixel normalization.
+
+### 1. Understanding Batch Dimensions
+
+Explored how individual image tensors are organized into batches for processing by deep-learning models.
+
+- Reviewed PyTorch's channel-first image representation `(C, H, W)`.
+- Used `unsqueeze(0)` to introduce a batch dimension.
+- Examined the resulting `(N, C, H, W)` tensor structure.
+- Investigated how batch size, channel count, image height, and image width are represented.
+- Connected image batching to the DataLoader workflows previously explored during Project 01.
+
+This exercise established an understanding of the four-dimensional tensor format commonly expected by convolutional neural networks.
+
+### 2. GPU Tensor Operations
+
+Practiced using PyTorch to perform image tensor operations with GPU acceleration on the NVIDIA DGX Spark.
+
+- Used `torch.cuda.is_available()` to verify CUDA availability.
+- Selected a computation device using `torch.device()`.
+- Transferred an image tensor to the selected device using `.to(device)`.
+- Inspected tensor properties, including shape, data type, and device.
+- Computed the mean pixel intensity of an image tensor.
+- Used `.item()` to retrieve scalar tensor results.
+- Calculated average intensity values for individual RGB channels.
+- Practiced transferring computed results to the CPU for NumPy-based inspection.
+
+This reinforced previous experience using GPU acceleration with PyTorch while applying those concepts to multidimensional image data.
+
+### 3. Working with Satellite-Sized Image Tensors
+
+Completed the final technical exercise by generating and inspecting synthetic image data with dimensions matching the RGB imagery used in the EuroSAT dataset.
+
+- Set a random seed using `torch.manual_seed()` for reproducibility.
+- Generated a batch of 16 synthetic RGB images
