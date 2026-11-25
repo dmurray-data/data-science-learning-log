@@ -960,3 +960,122 @@ Completed the final technical exercise by generating and inspecting synthetic im
 
 - Set a random seed using `torch.manual_seed()` for reproducibility.
 - Generated a batch of 16 synthetic RGB images
+
+
+### November 24, 2026
+
+**Project:** 02 — Deep Learning for Satellite Image Classification  
+**Notebook:** `02_convolutions_and_feature_maps.ipynb`  
+**Phase:** 1 — Computer Vision Foundations  
+**Status:** In Progress
+
+## Today's Progress
+
+Continued working on Project 02 of my 12-month data science and machine-learning portfolio development plan.
+
+Completed Exercises 1A, 1B, and 1C of Notebook 02, focusing on the mathematical foundations of convolution, manually implementing convolution operations using NumPy, and visualizing the resulting feature maps.
+
+This session marked the transition from understanding image representation and tensor manipulation to exploring the mathematical operations that allow convolutional neural networks (CNNs) to extract spatial features from images.
+
+### 1. Exercise 1A — Understanding Convolution Mathematically
+
+Explored how a convolution kernel interacts with a local region of an image.
+
+- Created a 3 × 3 numerical image using NumPy.
+- Defined a 2 × 2 convolution kernel.
+- Extracted a local image region using NumPy slicing.
+- Performed elementwise multiplication between the image region and kernel.
+- Summed the resulting values to calculate a single convolution output.
+- Examined how kernel weights influence the resulting numerical value.
+
+The exercise demonstrated how convolution operations can be broken down into basic multiplication and summation operations.
+
+### 2. Exercise 1B — Calculating a Complete Feature Map
+
+Extended the previous exercise to calculate an entire feature map by moving the kernel across the input image.
+
+- Used nested `for` loops to move a kernel horizontally and vertically.
+- Extracted image regions at different spatial positions.
+- Applied elementwise multiplication and summation at each position.
+- Stored the results in a two-dimensional NumPy array.
+- Examined how the input dimensions and kernel size determine the output dimensions.
+- Produced a 2 × 2 feature map from a 3 × 3 input image using a 2 × 2 kernel.
+
+Reviewed the output dimension relationship for a stride of 1 without padding:
+
+\[
+H_{out}=H_{in}-K_H+1
+\]
+
+\[
+W_{out}=W_{in}-K_W+1
+\]
+
+This exercise established an understanding of how convolution preserves local spatial relationships while transforming an image into a feature map.
+
+### 3. Exercise 1C — Visualizing Convolution Results
+
+Used Matplotlib to compare an original image with its resulting convolution feature map.
+
+- Created side-by-side visualizations using `plt.subplots()`.
+- Displayed the original numerical image as a grayscale image.
+- Visualized the calculated feature map.
+- Examined why the example kernel produced identical output values across the feature map.
+- Reinforced the connection between numerical convolution results and their visual representations.
+
+This exercise helped connect the mathematical process of convolution with its practical use in computer vision.
+
+## Skills Practiced
+
+- NumPy multidimensional array indexing and slicing
+- Elementwise matrix multiplication
+- Summation operations using `np.sum()`
+- Nested loops for spatial operations
+- Understanding convolution kernels
+- Calculating feature map dimensions
+- Generating feature maps manually
+- Matplotlib subplot visualization
+- Interpreting convolution output values
+
+## Key Takeaways
+
+Convolutional operations process local regions of an image using small matrices called kernels or filters.
+
+At each valid position, the kernel is multiplied elementwise with the corresponding image region, and the products are summed to produce an output value.
+
+By moving the kernel across an image, the operation generates a feature map that represents the image's response to that filter.
+
+The dimensions of the resulting feature map depend on the input image dimensions, kernel size, stride, and padding.
+
+The numerical operations underlying convolution are relatively straightforward, but their repeated application enables convolutional neural networks to identify increasingly complex visual patterns.
+
+An important distinction is that standard deep-learning convolution layers perform cross-correlation rather than mathematically flipped convolution. The term convolution is nevertheless commonly used in deep learning.
+
+## Connection to Previous Work
+
+Notebook 01 established the foundations of image representation, RGB channels, image tensors, normalization, and GPU processing.
+
+Today's exercises introduced the spatial operations that allow convolutional neural networks to process images differently from the fully connected networks used during Project 01.
+
+The exercises also reinforced concepts from linear algebra and numerical computing, particularly matrix operations, array indexing, and elementwise multiplication.
+
+Understanding these operations provides the foundation for implementing trainable convolutional layers using PyTorch.
+
+## Next Steps
+
+1. Begin Exercise 2: Implementing Convolution with NumPy.
+2. Develop a reusable convolution function that works with different image and kernel dimensions.
+3. Investigate how different kernel values affect the output feature map.
+4. Explore image filtering techniques, including blurring and edge detection.
+5. Begin examining the effects of stride and padding.
+6. Progress toward implementing convolutional layers using `torch.nn.Conv2d`.
+
+## Session Summary
+
+Completed Exercises 1A, 1B, and 1C of Notebook 02, developing a foundational understanding of convolution operations and feature map generation.
+
+Successfully implemented convolution calculations using NumPy, extended those calculations across an image, and visualized the resulting feature map using Matplotlib.
+
+**Current milestone:** Notebook 02 — Exercise 1 completed (Parts A, B, and C).
+
+**Next milestone:** Exercise 2 — Building a reusable convolution function with NumPy.
