@@ -1079,3 +1079,106 @@ Successfully implemented convolution calculations using NumPy, extended those ca
 **Current milestone:** Notebook 02 — Exercise 1 completed (Parts A, B, and C).
 
 **Next milestone:** Exercise 2 — Building a reusable convolution function with NumPy.
+
+
+### November 26, 2026
+
+**Project:** 02 — Deep Learning for Satellite Image Classification  
+**Notebook:** `02_convolutions_and_feature_maps.ipynb`  
+**Phase:** 1 — Computer Vision Foundations  
+**Status:** In Progress
+
+## Today's Progress
+
+Continued working on Project 02 of my 12-month data science and machine-learning portfolio development plan.
+
+Completed Exercise 2A of Notebook 02, focusing on dynamically calculating the output dimensions of convolution operations using NumPy.
+
+This session built upon the previous exercises involving manual convolution calculations and feature map generation, introducing a more flexible approach to handling images and kernels of different dimensions.
+
+### 1. Creating a New Test Image
+
+Created a larger numerical image to investigate how convolution operations behave with different input dimensions.
+
+- Created a 5 × 5 grayscale image using NumPy.
+- Defined a 3 × 3 kernel designed to detect vertical edges.
+- Examined the dimensions of both arrays using `.shape`.
+- Reviewed how kernel size relates to the spatial dimensions of the input image.
+
+### 2. Calculating Convolution Output Dimensions Dynamically
+
+Explored how to determine feature map dimensions without hardcoding the input image or kernel size.
+
+- Extracted image height and width using NumPy array shapes.
+- Extracted kernel height and width programmatically.
+- Implemented the output dimension formulas for a stride of 1 and no padding.
+- Calculated the resulting 3 × 3 output dimensions from a 5 × 5 image and a 3 × 3 kernel.
+- Reinforced the importance of deriving dimensions directly from input data.
+
+The formulas examined were:
+
+\[
+H_{out}=H_{in}-K_H+1
+\]
+
+\[
+W_{out}=W_{in}-K_W+1
+\]
+
+These formulas apply when convolution uses a stride of 1 without padding or dilation.
+
+### 3. Understanding Reusable Scientific Code
+
+Examined why dynamically calculating array dimensions is preferable to using fixed values.
+
+By relying on the shapes of input arrays, the same implementation can accommodate different image resolutions and kernel dimensions without manually changing the output size calculations.
+
+This provides an important foundation for developing reusable convolution functions and more flexible machine-learning pipelines.
+
+## Skills Practiced
+
+- NumPy array creation
+- Working with multidimensional array shapes
+- Extracting array dimensions using `.shape`
+- Understanding image and kernel dimensions
+- Calculating feature map sizes
+- Applying convolution output dimension formulas
+- Avoiding hardcoded dimensions
+- Designing reusable numerical operations
+
+## Key Takeaways
+
+The dimensions of a convolution's output feature map depend on the dimensions of the input image and the kernel, as well as parameters such as stride and padding.
+
+For a stride of 1 without padding, the output dimensions can be determined by subtracting the kernel dimensions from the input dimensions and adding 1.
+
+Using `.shape` to determine input dimensions makes code more adaptable and reduces the need for manual modifications when processing images of different sizes.
+
+These concepts are essential for implementing reusable convolution operations and understanding how image dimensions change as data passes through convolutional neural networks.
+
+## Connection to Previous Work
+
+Exercise 1 introduced the mathematical process of convolution through elementwise multiplication, summation, and kernel movement across an image.
+
+Exercise 2A extended that foundation by introducing dynamic output shape calculations.
+
+This also reinforced programming practices developed during Project 01, particularly reusable code design, tensor dimension management, and preparing data for neural-network operations.
+
+## Next Steps
+
+1. Begin Exercise 2B: Building a Reusable Convolution Function.
+2. Implement the `convolve2d()` function using NumPy.
+3. Use dynamic image and kernel dimensions to allocate the output feature map.
+4. Apply nested loops to move the kernel across the input image.
+5. Calculate output values using elementwise multiplication and summation.
+6. Continue to Exercise 2C to test the function against expected results.
+
+## Session Summary
+
+Completed Exercise 2A of Notebook 02, focusing on dynamically calculating convolution output dimensions using NumPy.
+
+Developed a clearer understanding of how input dimensions and kernel sizes determine feature map dimensions and why dynamic shape calculations are important for reusable scientific code.
+
+**Current milestone:** Notebook 02 — Exercise 2A completed.
+
+**Next milestone:** Exercise 2B — Implementing the reusable `convolve2d()` function.
