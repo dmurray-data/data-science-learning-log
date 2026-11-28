@@ -1182,3 +1182,121 @@ Developed a clearer understanding of how input dimensions and kernel sizes deter
 **Current milestone:** Notebook 02 — Exercise 2A completed.
 
 **Next milestone:** Exercise 2B — Implementing the reusable `convolve2d()` function.
+
+# Learning Log — November 27, 2026
+
+**Project:** 02 — Deep Learning for Satellite Image Classification  
+**Notebook:** `02_convolutions_and_feature_maps.ipynb`  
+**Phase:** 1 — Computer Vision Foundations  
+**Status:** In Progress
+
+## Today's Progress
+
+Continued working on Project 02 of my 12-month data science and machine-learning portfolio development plan.
+
+Completed Exercises 2B and 2C of Notebook 02, focusing on implementing a reusable two-dimensional convolution function using NumPy and testing its output against expected results.
+
+This session built upon Exercise 2A, where I learned to calculate convolution output dimensions dynamically using the shapes of input images and kernels.
+
+### 1. Exercise 2B — Building a Reusable Convolution Function
+
+Implemented a generalized `convolve2d()` function capable of applying different kernels to two-dimensional grayscale images.
+
+- Defined a reusable Python function accepting an image and kernel as arguments.
+- Used `.shape` to extract image and kernel dimensions dynamically.
+- Calculated output feature map dimensions without hardcoding array sizes.
+- Initialized an output array using `np.zeros()` with a floating-point data type.
+- Implemented nested loops to slide the kernel across valid image positions.
+- Used NumPy slicing to extract local image regions corresponding to the kernel dimensions.
+- Applied elementwise multiplication between each image region and the kernel.
+- Used `np.sum()` to calculate individual feature map values.
+- Returned the completed feature map from the function.
+
+The implementation used a stride of 1 and no padding, following the cross-correlation convention commonly used in deep-learning frameworks.
+
+This exercise demonstrated how mathematical operations previously performed manually can be organized into reusable and adaptable Python functions.
+
+### 2. Exercise 2C — Testing the Convolution Function
+
+Tested the newly implemented function using a 5 × 5 numerical image and a 3 × 3 vertical-edge detection kernel.
+
+- Applied the `convolve2d()` function to the test image.
+- Examined the resulting feature map.
+- Verified the expected output dimensions of 3 × 3.
+- Compared the calculated values with the expected convolution results.
+- Examined why the selected kernel produced a uniform response of -6 across the feature map.
+- Reinforced the relationship between kernel weights, image intensity patterns, and convolution output values.
+
+The resulting feature map was:
+
+```text
+[[-6. -6. -6.]
+ [-6. -6. -6.]
+ [-6. -6. -6.]]
+```
+
+The uniform result occurred because the input image contained a consistent horizontal intensity gradient, and the kernel calculated the difference between values on the left and right sides of each image region.
+
+### 3. Understanding Function Reusability
+
+Reinforced the importance of writing reusable code for scientific computing and machine-learning workflows.
+
+By calculating output dimensions dynamically and accepting kernels as function arguments, the implementation can process different valid image and kernel sizes without requiring changes to the core calculation.
+
+This approach provides a foundation for experimenting with multiple image-processing filters and understanding the operations performed by convolutional neural networks.
+
+## Skills Practiced
+
+- Python function definition and documentation
+- Reusable numerical algorithm development
+- NumPy array manipulation
+- Dynamic output shape calculations
+- Nested iteration over image dimensions
+- Multidimensional array slicing
+- Elementwise multiplication and summation
+- Feature map generation
+- Testing numerical implementations
+- Interpreting convolution kernel responses
+
+## Key Takeaways
+
+Convolution operations can be implemented using basic numerical operations, including array slicing, elementwise multiplication, and summation.
+
+A reusable convolution function can determine output dimensions dynamically based on the supplied image and kernel.
+
+Nested loops allow a kernel to move across an image, with each valid position producing one value in the output feature map.
+
+The numerical values in a convolution kernel determine which spatial patterns are emphasized.
+
+A vertical-edge detection kernel responds to horizontal changes in pixel intensity, making it useful for identifying vertically oriented boundaries.
+
+The function developed in this exercise provides a simplified implementation of the cross-correlation operation used by convolutional layers in deep-learning frameworks such as PyTorch.
+
+## Connection to Previous Work
+
+Exercise 2A established how to calculate output dimensions dynamically.
+
+Exercises 2B and 2C extended this knowledge into a reusable implementation and demonstrated its behavior using a test image.
+
+These exercises also reinforced programming techniques developed during Project 01, including function design, array manipulation, numerical computation, and testing code against expected results.
+
+Understanding the underlying convolution algorithm will make it easier to interpret the behavior of PyTorch's `nn.Conv2d` layers later in the project.
+
+## Next Steps
+
+1. Begin Exercise 2D: Experimenting with Different Convolution Kernels.
+2. Implement vertical-edge, horizontal-edge, and averaging kernels.
+3. Apply multiple kernels using the reusable `convolve2d()` function.
+4. Compare how different kernel weights influence feature map values.
+5. Complete Exercise 2E by visualizing the resulting feature maps.
+6. Compare the NumPy implementation against PyTorch's `torch.nn.functional.conv2d()`.
+
+## Session Summary
+
+Completed Exercises 2B and 2C of Notebook 02, successfully implementing a reusable convolution function and testing its output using a numerical image and edge-detection kernel.
+
+Progressed from manually calculating convolution results to developing a reusable numerical implementation capable of processing different image and kernel dimensions.
+
+**Current milestone:** Notebook 02 — Exercises 2A, 2B, and 2C completed.
+
+**Next milestone:** Exercise 2D — Experimenting with Different Convolution Kernels.
